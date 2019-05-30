@@ -8,7 +8,13 @@ namespace job_seeker.test
         [Fact]
         public void TestAuthController()
         {
+            //Arrange
 
+            //Act
+            
+            //Assert
+
+            
         }
     }
 }
