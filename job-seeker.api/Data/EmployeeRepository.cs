@@ -11,6 +11,8 @@ namespace job_seeker.api.Data
     public class EmployeeRepository : IEmployeeRepository
     {
         private readonly DataContext context;
+        
+        // Constructor dependency injection
         public EmployeeRepository(DataContext context)
         {
             this.context = context;
