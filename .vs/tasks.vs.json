@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-AuthController",
+      "appliesTo": "job-seeker.api/Controllers/AuthController.cs",
+      "type": "launch"
+    }
+  ]
+}

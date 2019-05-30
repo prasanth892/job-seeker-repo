@@ -1,0 +1,132 @@
+
+<div class="container " style="margin-top: 80px"> 
+
+  <div class="row col-12 " style="left: -20px" id="printReportBtn">
+    <div class="col-10">
+      <button class="  btn btn-dark btn-md text-light"  style="font-size:1em" 
+      routerLinkActive="router-link-active" [routerLink]="['/emp-manipulation-admin']" 
+      routerLinkActive="router-link-active"  >back to List</button>
+    </div>
+
+  </div>
+   
+  <mdb-card class="" style="margin-top: 10px" [ngClass]="{inactiveClass: updateEmployeeForm.get('status') == 'inactive'}">    
+
+    <mdb-card-header class="white-text text-center py-4" style="background-color: black; height: 70px" >
+      <h3>
+        <strong >Update Employee</strong>
+      </h3>
+    </mdb-card-header>
+    
+    <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0" id="contentToConvert">
+  
+        <!-- Form -->
+        <form [formGroup]="updateEmployeeForm" class="text-center" style="color: black;">
+  
+          <div class="form-row pt-3">
+            <div class="col">
+              <!-- First name -->
+              <div class="md-form">
+                <input formControlName="firstName" type="text"
+                 [ngClass]="{'is-invalid': updateEmployeeForm.get('firstName').errors}" 
+                 id="firstName" class="form-control " mdbInput>
+                <label for="firstName">First Name</label>
+                <div class="invalid-feedback">Please enter the First Name</div>
+              </div>
+            </div>
+    
+            <div class="col">
+                <!-- First name -->
+                <div class="md-form " >
+                  <input formControlName="lastName" type="text"
+                   [ngClass]="{'is-invalid': updateEmployeeForm.get('lastName').errors}" 
+                   id="lastName" class="form-control " mdbInput>
+                  <label for="lastName">Last Name</label>
+                  <div class="invalid-feedback">Please enter the Last Name</div>
+                </div>
+              </div>
+            </div> 
+            
+            <div class="form-row pt-3">
+              <div class="col">
+                <!-- First name -->
+                <div class="md-form">
+                  <input formControlName="contactNumber" type="text"
+                   [ngClass]="{'is-invalid': updateEmployeeForm.get('contactNumber').errors}" 
+                   id="contactNumber" class="form-control " mdbInput>
+                  <label for="contactNumber">Contact Number</label>
+                  <div class="invalid-feedback">Please enter the valid Contact Number & should be 10 Characters</div>
+                  
+                </div>
+              </div>
+      
+              <div class="col">
+                 
+                  <div class="md-form " >
+                    <input formControlName="username" type="text" disabled="disabled"
+                     [ngClass]="{'is-invalid': updateEmployeeForm.get('username').errors}" 
+                     id="username" class="form-control " mdbInput>
+                    <label for="username">Username</label>
+                    <div class="invalid-feedback">Please enter the Userame & should be 10 Characters</div>
+                  </div>
+                </div>
+              </div> 
+  
+              <div class="form-row pt-3">
+                <div class="col-6">
+                  <!-- First name -->
+                  <div class="md-form">
+                    <input formControlName="password" type="text"
+                     [ngClass]="{'is-invalid': updateEmployeeForm.get('password').errors}" 
+                     id="password" class="form-control " mdbInput>
+                    <label for="password">Password</label>
+                    <div class="invalid-feedback">Please enter the Password & should be 10 Characters</div>
+                    
+                  </div>
+                </div> 
+              
+                <div class="col-4">
+                  <div class="md-form">
+                    <div class="row">
+                    <div class="col col-3" >
+                        <label for="status" style="left: 30px; color:black;">Status : </label>
+                    </div>
+                      <div class="col col-9 " style="right: 10px" >
+                          <select formControlName="status" class="browser-default custom-select" [ngClass]="{inactiveClass: updateEmployeeForm.get('status').value == 'inactive'}" [(ngModel)]="statusChange">
+                              <option value="active">Activate</option>
+                              <option value="inactive">Inactivate</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
+                </div>
+            
+              </div>
+    
+    
+          <div class="row  justify-content-center">
+            <div class="col-md-3 text-center" >
+              <!-- Sign up button -->
+              <button mdbBtn color="info" style="font-size: 15px" outline="true" rounded="true" block="true" 
+              class="btn btn-dark btn-md text-light" mdbWavesEffect
+                type="submit" (click)="save()" [disabled]="updateEmployeeForm.invalid ">Update</button>
+              </div>
+    
+              <div class="col-md-3 text-center" >
+                  <!-- Sign up button -->
+                  <button mdbBtn color="danger" style="font-size: 15px" outline="true" rounded="true" block="true" class="btn btn-dark btn-md text-light" mdbWavesEffect
+                    type="button" (click)="cancel()">Cancel</button>
+              </div>
+    
+            </div>    
+          
+        </form>
+      <!-- Form -->
+  
+    </mdb-card-body>
+  
+  </mdb-card>
+  
+
+  </div>

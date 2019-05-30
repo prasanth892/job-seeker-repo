@@ -1,0 +1,87 @@
+nav:hover{
+
+color:red;
+}
+#imgSpan {
+  max-height: 50px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  #spanText {
+    font-size: 25px;
+  }
+
+  #imgSpan {
+    max-height: 30px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  #imgSpan {
+    max-height: 35px;
+  }
+  #spanText {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 2000px) {
+  #imgSpan {
+    height: 50px;
+  }
+  #spanText {
+    font-size: 30px;
+  }
+}
+
+img {
+  max-height: 50px;
+
+  display: inline;
+  max-width: 50px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 400px) {
+  .formLogin {
+    break-after: always;
+  }
+}
+
+dropdown-item {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  #imgSpan {
+    display: none;
+  }
+
+  #btnLogin {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+  #welcomeSpan {
+    display: none;
+    color: red;
+  }
+}
+
+.linkClass {
+  font-size: 15px;
+  font-weight: bolder;
+  color: red;
+  /* background-color: aquamarine; */
+}
+
+
+/* ul > li:hover {
+
+  color: red;
+
+}
+
+.active{
+  color:red;
+} */

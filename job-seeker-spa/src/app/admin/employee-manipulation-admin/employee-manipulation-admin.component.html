@@ -1,0 +1,215 @@
+
+<div class="container " style="margin-top: 80px"> 
+    
+
+  <div class="row col-md-12">
+    <div class="col-5 offset-1 mr-5 card text-white bg-dark"
+    (click)="showHideAddJobDiv()"  style="cursor: pointer" >
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                <h5 style="font-size: 25px" class="card-title">Add Employee</h5>
+              </div>
+              <div  class="col-6" style="left: 130px">
+                  <i style="font-size: 40px" class="fas fa-user-plus"></i>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <div class="col-5 ml-6 card text-white bg-dark " style="cursor: pointer"
+      (click)="showHideSearchBox()" >
+        <div class="card-body">
+            <div class="row ">
+              <div class="col-9">
+              <h5 style="font-size: 25px" class="card-title">Search Employee</h5>
+            </div>
+            <div  class="col-3" style="left: 30px">
+                <i style="font-size: 40px" class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+  
+  <br>
+      <div class="text-center" *ngIf="!addJobDivShow">
+        <h1 style="font-weight: bolder">Employees' Information</h1>
+      </div>
+  
+   
+   
+   <div *ngIf="!addJobDivShow" >
+   
+    <div class="row " *ngIf="showSeachBox"  style="margin-top: -20px"  >
+  
+        <form class="form-inline md-form form-sm active-purple active-purple-2 col-9 offset-3">
+            <input class="form-control form-control-sm ml-3 w-75" 
+            type="text" placeholder="Search" style="font-size: 22px" aria-label="Search"
+            (keyup)="searchEmployees($event)"
+            mdbInput> <i class="fas fa-search" aria-hidden="true"></i>
+          </form>
+      
+            
+    </div>  
+  
+  <hr>
+  <br>
+  <div class="alert alert-danger" role="alert" *ngIf="employees.length === 0 && !showSpinner">
+    
+    <h1 class="text-center "><strong>No result Found</strong></h1>
+  </div>
+  
+<div class="row" style="cursor: pointer"  >
+  <div class="sk-fading-circle" *ngIf="showSpinner">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+  </div>
+  
+      <ul [ngClass]="{inactive: employee.status !== 'active'}" class="card col-md-5 mr-5 pt-4" 
+      style="left: 70px;" *ngFor= "let employee of employees" (click)="navigateToEdit(employee.username)">
+        <ol >
+          <div class="d-flex justify-content-between" ><strong style="color: transparent">Status:</strong> <strong>{{employee.status + ' Employee' | titlecase}}</strong></div> 
+            
+          <strong>Employee ID:</strong> {{employee.id }} 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+          <strong>First Name:</strong> {{employee.firstName | titlecase}}
+          <br>
+          <strong>Last Name:</strong> {{employee.lastName | titlecase}}
+          <br>
+          <strong>Contact Number:</strong> {{employee.contactNumber}}
+          <br>
+          <strong>Username:</strong> {{employee.username | titlecase}}
+          <br>
+          <strong>Password:</strong> {{employee.password }}
+          <br>
+          <strong>Since:</strong> {{employee.isCreated | date: 'dd/MM/yyyy'  }}
+          </ol>    
+         <br>
+      </ul>
+    </div>
+   </div>
+  
+  <div class="container" style="margin-top: 20px">
+    <div *ngIf="addJobDivShow">
+      
+      
+  <mdb-card class="" style="margin-top: -20px">    
+  
+    <mdb-card-header class="white-text text-center py-4" style="background-color: black; height: 70px" >
+      <h3>
+        <strong >Add New Employee</strong>
+      </h3>
+    </mdb-card-header>
+    
+    <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0" id="contentToConvert">
+  
+        <!-- Form -->
+      <form [formGroup]="addEmployeeForm" class="text-center" style="color: black;">
+  
+        <div class="form-row pt-3">
+          <div class="col">
+            <!-- First name -->
+            <div class="md-form">
+              <input formControlName="firstName" type="text"
+               [ngClass]="{'is-invalid': addEmployeeForm.get('firstName').errors}" 
+               id="firstName" class="form-control " mdbInput>
+              <label for="firstName">First Name</label>
+              <div class="invalid-feedback">Please enter the First Name</div>
+            </div>
+          </div>
+  
+          <div class="col">
+              <!-- First name -->
+              <div class="md-form " >
+                <input formControlName="lastName" type="text"
+                 [ngClass]="{'is-invalid': addEmployeeForm.get('lastName').errors}" 
+                 id="lastName" class="form-control " mdbInput>
+                <label for="lastName">Last Name</label>
+                <div class="invalid-feedback">Please enter the Last Name</div>
+              </div>
+            </div>
+          </div> 
+          
+          <div class="form-row pt-3">
+            <div class="col">
+              <!-- First name -->
+              <div class="md-form">
+                <input formControlName="contactNumber" type="text"
+                 [ngClass]="{'is-invalid': addEmployeeForm.get('contactNumber').errors}" 
+                 id="contactNumber" class="form-control " mdbInput>
+                <label for="contactNumber">Contact Number</label>
+                <div class="invalid-feedback">Please enter the valid Contact Number & should be 10 Characters</div>
+                
+              </div>
+            </div>
+    
+            <div class="col">
+                <!-- First name -->
+                <div class="md-form " >
+                  <input formControlName="username" type="text"
+                   [ngClass]="{'is-invalid': addEmployeeForm.get('username').errors}" 
+                   id="username" class="form-control " mdbInput>
+                  <label for="username">Username</label>
+                  <div class="invalid-feedback">Please enter the Userame & should be 10 Characters</div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="form-row pt-3">
+              <div class="col-6">
+                <!-- First name -->
+                <div class="md-form">
+                  <input formControlName="password" type="text"
+                   [ngClass]="{'is-invalid': addEmployeeForm.get('password').errors}" 
+                   id="password" class="form-control " mdbInput>
+                  <label for="password">Password</label>
+                  <div class="invalid-feedback">Please enter the Password & should be less than 10 Characters</div>
+                  
+                </div>
+              </div>  </div>
+      
+  
+  
+        <div class="row  justify-content-center">
+          <div class="col-md-3 text-center" >
+            <!-- Sign up button -->
+            <button mdbBtn color="info" style="font-size: 15px" outline="true" rounded="true" block="true" 
+            class="btn btn-dark btn-md text-light" mdbWavesEffect
+              type="submit" (click)="save()" [disabled]="addEmployeeForm.invalid ">Save</button>
+            </div>
+  
+            <div class="col-md-3 text-center" >
+                <!-- Sign up button -->
+                <button mdbBtn color="danger" style="font-size: 15px" outline="true" rounded="true" block="true" class="btn btn-dark btn-md text-light" mdbWavesEffect
+                  type="button" (click)="cancel()">Cancel</button>
+            </div>
+  
+          </div>    
+        
+      </form>
+      <!-- Form -->
+  
+    </mdb-card-body>
+  
+  </mdb-card>
+  
+  <br><br>
+  
+  
+      
+    </div>
+      
+    </div>
+  </div> 

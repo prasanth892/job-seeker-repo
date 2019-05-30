@@ -1,0 +1,501 @@
+ADD NEW EMPLOYEE BY ADMIN
+<div class="container " style="margin-top: 80px; border: black opx solid"> 
+
+<!-- Material form register -->
+<mdb-card>
+
+  <mdb-card-header class="white-text text-center py-4" style="background-color: black; color: white; height: 70px" >
+    <h3>
+      <strong >Manage Curriculam Vitae</strong>
+    </h3>
+  </mdb-card-header>
+  
+
+  <div class="row col-3 offset-9" id="printReportBtn">
+    <button class="btn btn-dark btn-md text-light"  style="font-size:1em" [routerLink]="['/reports-jobseeker']" routerLinkActive="router-link-active"  routerLinkActive="router-link-active" >View / Print</button>
+  </div>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0" id="contentToConvert">
+
+    <!-- Form -->
+    <form [formGroup]="updateCVForm" class="text-center" style="color: #757575;">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form">
+            <input formControlName="firstName" type="text"
+             [ngClass]="{'is-invalid': updateCVForm.get('firstName').errors}" 
+             id="firstName" class="form-control " mdbInput>
+            <label for="firstName">First name</label>
+            <div class="invalid-feedback">Please enter the First Name</div>
+          </div>
+        </div>
+
+        <div class="col">
+            <!-- First name -->
+            <div class="md-form">
+              <input formControlName="lastName" type="text" id="lastName" 
+              [ngClass]="{'is-invalid': updateCVForm.get('lastName').errors}" 
+              class="form-control" mdbInput>
+              <label for="lastName">Last name</label>
+              <div class="invalid-feedback">Please enter the Last Name</div>
+            </div>
+          </div>
+  
+
+        <div class="col">
+            <div class="md-form">
+              <div class="row">
+              <div class="col col-3" >
+                  <label for="gender" style="left: 30px; color:black;">Gender : </label>
+              </div>
+                <div class="col col-9" >
+                    <select formControlName="gender" class="browser-default custom-select">
+                        <option  value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          </div>  
+
+
+      </div>
+
+      <div class="form-row">
+          <div class="col">
+           
+            <div class="md-form">
+            <input type="text" formControlName="dob" placeholder="Date of Birth" [bsConfig]="bsConfig"
+            class="form-control"  bsDatepicker onkeydown="return false">              
+            <div class="invalid-feedback">Please Valid date</div>
+            </div>
+          </div>
+
+          <div class="col">
+              <div class="md-form">
+                <div class="row">
+                <div class="col col-3" >
+                    <label for="religion" style="left: 20px ; color:black;">Relegion : </label>
+                </div>
+                  <div class="col col-9" >
+                      <select formControlName="religion" class="browser-default custom-select">
+                          <option value="buddhism">Buddhism</option>
+                          <option value="hindusim">Hindusim</option>
+                          <option value="cristianity">Cristianity</option>
+                          <option value="islam">Islam</option>
+                          <option value="sikhism">Sikhism</option>
+                          <option value="other">Other</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+            </div>
+
+          
+          <div class="col">
+              <div class="md-form">
+                <div class="row">
+                <div class="col col-5" >
+                    <label for="maritalStatus" style="left: 30px ; color:black;">Marital Status : </label>
+                </div>
+                  <div class="col col-7" >
+                      <select formControlName="maritalStatus" class="browser-default custom-select">
+                          <option value="single">Single</option>
+                          <option value="married">Married</option>
+                          <option value="divorce">Divorce</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+            </div>
+
+        </div>
+
+
+
+  <div class="form-row">
+      <div class="col">
+        <!-- Email -->
+        <div class="md-form">
+            <input type="email" id="email" formControlName="email" 
+            [ngClass]="{'is-invalid': updateCVForm.get('email').errors}" 
+            class="form-control" mdbInput>
+            
+            <label for="materialRegisterFormEmail">E-mail</label>
+            <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                At least 8 characters and 1 digit
+              </small> -->
+            <div class="invalid-feedback">Please enter the valid email</div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- Phone number -->
+        <div class="md-form">
+          <input type="number" id="contactNumber" class="form-control" formControlName="contactNumber"
+          [ngClass]="{'is-invalid': updateCVForm.get('contactNumber').errors}" 
+          mdbInput>
+          <label for="contactNumber">Phone number</label>
+          <div class="invalid-feedback">Please enter the valid Phone number</div>
+        </div>
+      </div>
+      <div class="col">
+          <!-- Height -->
+          <div class="md-form">
+            <input type="number" id="height" class="form-control" formControlName="height"
+            [ngClass]="{'is-invalid': updateCVForm.get('height').errors}"  mdbInput>
+            <label for="height">Height in Feet</label>
+            <div class="invalid-feedback">Please enter the valid Height</div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-row">
+        <div class="col">
+            <!-- Height -->
+            <div class="md-form">
+                <textarea type="text" formControlName="address" id="address" class="md-textarea form-control"
+                [ngClass]="{'is-invalid': updateCVForm.get('address').errors}"   mdbInput></textarea>
+                <label for="address">Address</label>
+                <div class="invalid-feedback">Please enter the Address</div>
+            </div>
+          </div>
+          <div class="col">
+              <!-- Height -->
+              <div class="md-form">
+                  <textarea type="text" id="overview" formControlName="overview" class="md-textarea form-control"
+                  [ngClass]="{'is-invalid': updateCVForm.get('overview').errors}"   mdbInput></textarea>
+                  <label for="overview">Overview</label>
+                  <div class="invalid-feedback">Please enter the Overview</div>
+              </div>
+            </div>            
+      </div>
+
+      <div class="form-row">
+          
+          <div class="col">
+              <div class="md-form">
+                <div class="row">
+                <div class="col col-4" >
+                    <label for="minEduLvl" style="right: -5px ; color:black;">Minimum Education : </label>
+                </div>
+                  <div class="col col-8" >
+                      <select formControlName="minEduLvl" class="browser-default custom-select">
+                          <option value="olevel">O' Level</option>
+                          <option value="alevel">A/L Level</option>
+                          <option value="diploma">Diploma</option>
+                          <option value="degree">Degree</option>
+                          <option value="postgraduate">Post Graduate Degree</option>
+                          <option value="master">Master Degree</option>
+                          <option value="doctorate">Doctorate</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+            </div>
+
+          
+          <div class="col">
+              <div class="md-form">
+                <div class="row">
+                <div class="col col-4" >
+                    <label for="minNumGscePasses" style="left: 30px ; color:black;">GSCE Passes : </label>
+                </div>
+                  <div class="col col-8" >
+                      <select formControlName="minNumGscePasses" class="browser-default custom-select">
+                          <option value="0 pass">No Passes</option>
+                          <option value="1 pass">01 Pass</option>
+                          <option value="2 passes">02 Passes</option>
+                          <option value="3 passes">03 Passes</option>
+                          <option value="4 passes">04 Passes</option>
+                          <option value="5 passes">05 Passes</option>
+                          <option value="6 passes">06 Passes</option>
+                          <option value="7 passes">07 Passes</option>
+                          <option value="8 passes">08 Passes</option>
+                          <option value="9 passes">09 Passes</option>
+                          <option value="10 passes">10 Passes</option>
+                          <option value="11 passes">11 Passes</option>
+                          <option value="12 passes">12 Passes</option>
+
+                      </select>
+                  </div>
+              </div>
+            </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+            <div class="col">
+                <!-- Height -->
+                <div class="md-form">
+                    <textarea type="text" id="address" formControlName="specificEduLvl" 
+                    [ngClass]="{'is-invalid': updateCVForm.get('specificEduLvl').errors}" 
+                     class="md-textarea form-control" mdbInput></textarea>
+                    <label for="specificEduLvl">Specific Education Qualification</label>
+                    <div class="invalid-feedback">Please enter the Spefic Education Qualification</div>
+                  </div>
+              </div>
+              <div class="col">
+                  <!-- Height -->
+                  <div class="md-form">
+                      <textarea type="text" id="specificProfessionalLvl"
+                      [ngClass]="{'is-invalid': updateCVForm.get('specificProfessionalLvl').errors}"
+                       formControlName="specificProfessionalLvl" class="md-textarea form-control" mdbInput></textarea>
+                      <label for="specificProfessionalLvl">Specific Professional Qualification</label>
+                      <div class="invalid-feedback">Please enter the Spefic Professional Qualification</div>
+                  </div>
+                </div>
+          </div>
+
+          
+          <div class="form-row">
+              <div class="col">
+                  <!-- Height -->
+                  <div class="md-form">
+                      <textarea type="text" id="specificSkill" formControlName="specificSkill"
+                      [ngClass]="{'is-invalid': updateCVForm.get('specificSkill').errors}"
+                       class="md-textarea form-control" mdbInput></textarea>
+                      <label for="specificSkill">Specific Skill</label>
+                      <div class="invalid-feedback">Please enter the Spefic Skill</div>
+                  </div>
+                </div>
+                <div class="col">
+                    <!-- Height -->
+                    <div class="md-form">
+                        <textarea type="text" id="specificExperience" formControlName="specificExperience" class="md-textarea form-control"
+                        [ngClass]="{'is-invalid': updateCVForm.get('specificExperience').errors}"
+                        mdbInput></textarea>
+                        <label for="specificExperience">Specific Experience</label>
+                        <div class="invalid-feedback">Please enter the Spefic Experience</div>
+                    </div>
+                  </div>
+            </div>
+
+      <!-- Image Uploading -->
+  <!-- Image Uploading -->
+  <div class="row mt-3">
+             
+    <div class="col-md-9">
+  
+        <h3>Add Picture</h3>
+  
+        <div ng2FileDrop style="height: 200px;"
+             [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+             [uploader]="uploader"
+             pt-3
+             class="card bg-faded mb-3 text-center p-3 my-drop-zone">
+             <i class="fa fa-upload fa-4x" style=" padding-top: 35px"></i>
+             Drop Photoes Here
+        </div>
+  
+        
+        <label class="btn btn-primary btn-file"> Choose File
+           <input style="display: none" 
+           type="file" ng2FileSelect [uploader]="uploader" multiple /></label> 
+  
+        <!-- Single
+        <input type="file" ng2FileSelect [uploader]="uploader" /> -->
+    </div> 
+
+    <div class="col-md-3 " *ngIf="!uploader?.queue?.length">
+  
+        <h3>Profile Picture</h3>
+  
+        <div ng2FileDrop style="height: 200px; max-height:100px"  >
+             <!-- <i class="fa fa-user-ninja fa-4x"  style=" padding-top: 35px"></i> -->
+             <img [src]="imageUrl"  style="max-height: 200px; " class="card bg-faded mb-3 text-center p-3">
+        </div>
+  
+    </div>
+
+  
+    <div class="col-md-12" style="margin-bottom: 40px" *ngIf="uploader?.queue?.length">
+  <br>
+        <h3>Upload queue</h3>
+        <p>Queue length: {{ uploader?.queue?.length }}</p>
+  
+  
+            <div *ngFor="let item of uploader.queue;">
+               File Name : <span class="mr-5"><strong>{{ item?.file?.name }}</strong></span>
+                
+              </div>
+              <br>
+             
+              <div>
+            <div>
+                Queue progress:
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success btn-s mr-2"
+                    (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                    <span class="fa fa-upload"></span> Upload
+            </button>
+            <button type="button" class="btn btn-warning btn-s mr-2"
+                    (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                    <span class="fa fa-ban"></span> Cancel
+            </button>
+            <button type="button" class="btn btn-danger btn-s mr-2"
+                    (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                    <span class="fa fa-trash"></span> Remove
+            </button>
+        </div>
+  
+    </div>
+  
+  </div>
+    <br>
+
+
+
+      <div style="border: 3px solid black" class="pt-3">
+          Looking For...
+        
+        <br>
+        <div class="form-row " >
+            <div class="col">
+              <div class="md-form">
+                <div class="row">
+                <div class="col col-3" >
+                    <label for="materialRegisterFormFirstName" style="left: 20px ; right:10px; color:black;">Sector : </label>
+                </div>
+                  <div class="col col-9" >
+                      <select formControlName="sector" class="browser-default custom-select">
+                          <option value="administration">Adminsitration</option>
+                          <option value="acriculture">Acriculture</option>
+                          <option value="engineering">Engineering</option>
+                          <option value="finance">Finance</option>
+                          <option value="accounting">Accounting</option>
+                          <option value="medicine">Medicine</option>
+
+                        </select>
+                  </div>
+              </div>
+            </div>
+            </div>
+        
+            <div class="col">
+                <div class="md-form">
+                  <div class="row">
+                  <div class="col col-3" >
+                      <label for="materialRegisterFormFirstName" style="left: 30px ; color:black;">State : </label>
+                  </div>
+                    <div class="col col-9" >
+                        <select formControlName="state" class="browser-default custom-select">
+                            <option value="north">Northern</option>
+                            <option value="northwestern">North Western</option>
+                            <option value="western">Western</option>
+                            <option value="Northcentral">North Central</option>
+                            <option value="central">Central</option>
+                            <option value="sabaragamuwa">Sabaragamuwa</option>
+                            <option value="eastern">Eastern</option>
+                            <option value="uva">Uva</option>
+                            <option value="southern">Southern</option>
+
+                        </select>
+                    </div>
+                </div>
+              </div>
+              </div>
+        
+              <div class="col">
+                  <div class="md-form">
+                    <div class="row">
+                    <div class="col col-3" >
+                        <label for="materialRegisterFormFirstName" style="left: 30px; color:black;">Type : </label>
+                    </div>
+                      <div class="col col-9 " style="right: 10px" >
+                          <select formControlName="type" class="browser-default custom-select">
+                              <option value="casual">Casual</option>
+                              <option value="contract">Contract</option>
+                              <option value="parttime">Part Time</option>
+                              <option value="fulltime">Full Time</option>
+                              <option value="temporary">Temporary</option>
+                              <option value="volunteer">Volunteer</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
+                </div>
+          </div>
+        </div>
+
+      <!-- Profile Picture Uploading -->
+
+    
+
+
+      
+      <br>
+
+      <!-- error not workign redo -->
+      <!-- <div class="">
+       <mdb-checkbox  [checked]="false" >Agree that all the information are given by you, is correct and accurate.</mdb-checkbox>
+      </div> -->
+
+
+
+      <div class="row  justify-content-center">
+        <div class="col-md-3 text-center" >
+          <!-- Sign up button -->
+          <button mdbBtn color="info" style="font-size: 15px" outline="true" rounded="true" block="true" 
+          class="btn btn-dark btn-md text-light" mdbWavesEffect
+            type="submit" (click)="save(updateCVForm.invalid)" >Save</button>
+          </div>
+
+          <div class="col-md-3 text-center" >
+              <!-- Sign up button -->
+              <button mdbBtn color="danger" style="font-size: 15px" outline="true" rounded="true" block="true" 
+              class="btn btn-dark btn-md text-light" mdbWavesEffect
+                type="button" (click)="cancel()">Cancel</button>
+              </div>
+
+
+      </div>
+
+
+      
+
+      <!-- Social register -->
+      <!-- <p>or sign up with:</p>
+
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="facebook"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="twitter"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="linkedin"></mdb-icon>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="google"></mdb-icon>
+      </a>
+ -->
+      <hr>
+
+      <!-- Terms of service -->
+      <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a> </p>
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form register -->
+
+<br>
+
+
+</div>

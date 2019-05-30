@@ -1,0 +1,35 @@
+2019-05-29 20:03:50.6847||DEBUG|Job_seeker_Application.Program|init main 
+2019-05-29 20:04:40.5755||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\harry\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-05-29 20:04:49.8214|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/api/values   
+2019-05-29 20:04:51.0071|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:04:51.0482|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Job_seeker_Application.Controllers.ValuesController (Job-seeker.api). 
+2019-05-29 20:04:51.0615|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) - Validation state: Valid 
+2019-05-29 20:04:51.1274|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.4381ms. 
+2019-05-29 20:04:51.1364|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'. 
+2019-05-29 20:04:52.3457|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) in 1292.2809ms 
+2019-05-29 20:04:52.3457|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:04:52.3535|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 2534.1973ms 200 application/json; charset=utf-8 
+2019-05-29 20:04:57.4886|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   
+2019-05-29 20:04:57.4928|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 4.1853ms 404  
+2019-05-29 20:20:18.2638||DEBUG|Job_seeker_Application.Program|init main 
+2019-05-29 20:20:21.8109||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\harry\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-05-29 20:20:25.3798|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/api/values   
+2019-05-29 20:20:25.6573|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:20:25.7003|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Job_seeker_Application.Controllers.ValuesController (Job-seeker.api). 
+2019-05-29 20:20:25.7474|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) - Validation state: Valid 
+2019-05-29 20:20:25.7590|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.2588ms. 
+2019-05-29 20:20:25.7755|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'. 
+2019-05-29 20:20:25.8674|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) in 132.2427ms 
+2019-05-29 20:20:25.8674|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:20:25.9014|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 522.3967ms 200 application/json; charset=utf-8 
+2019-05-29 20:41:18.8464||DEBUG|Job_seeker_Application.Program|init main 
+2019-05-29 20:41:23.0422||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\harry\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2019-05-29 20:41:25.8848|1|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET https://localhost:5001/api/values   
+2019-05-29 20:41:26.0753|0|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:41:26.0949|3|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Route matched with {action = "Get", controller = "Values"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]] Get() on controller Job_seeker_Application.Controllers.ValuesController (Job-seeker.api). 
+2019-05-29 20:41:26.1127|1|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) - Validation state: Valid 
+2019-05-29 20:41:26.1229|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action method Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.5854ms. 
+2019-05-29 20:41:26.1362|1|INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|Executing ObjectResult, writing value of type 'System.String[]'. 
+2019-05-29 20:41:26.2128|2|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api) in 107.6776ms 
+2019-05-29 20:41:26.2578|1|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'Job_seeker_Application.Controllers.ValuesController.Get (Job-seeker.api)' 
+2019-05-29 20:41:26.2721|2|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 388.224ms 200 application/json; charset=utf-8 

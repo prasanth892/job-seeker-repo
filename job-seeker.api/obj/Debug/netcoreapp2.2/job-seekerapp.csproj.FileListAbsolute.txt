@@ -1,0 +1,14 @@
+D:\job-seekerapp\job-seeker.api\bin\Debug\netcoreapp2.2\job-seekerapp.deps.json
+D:\job-seekerapp\job-seeker.api\bin\Debug\netcoreapp2.2\job-seekerapp.runtimeconfig.json
+D:\job-seekerapp\job-seeker.api\bin\Debug\netcoreapp2.2\job-seekerapp.runtimeconfig.dev.json
+D:\job-seekerapp\job-seeker.api\bin\Debug\netcoreapp2.2\job-seekerapp.dll
+D:\job-seekerapp\job-seeker.api\bin\Debug\netcoreapp2.2\job-seekerapp.pdb
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.csprojAssemblyReference.cache
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.csproj.CoreCompileInputs.cache
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.RazorAssemblyInfo.cache
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.RazorAssemblyInfo.cs
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.AssemblyInfoInputs.cache
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.AssemblyInfo.cs
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.RazorTargetAssemblyInfo.cache
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.dll
+D:\job-seekerapp\job-seeker.api\obj\Debug\netcoreapp2.2\job-seekerapp.pdb

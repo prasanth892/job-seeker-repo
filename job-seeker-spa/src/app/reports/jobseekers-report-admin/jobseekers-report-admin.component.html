@@ -1,0 +1,146 @@
+
+<div class="container " style="margin-top: 80px"> 
+    <br>
+      <div class="text-center" *ngIf="!addJobDivShow">
+        <h1 style="font-weight: bolder">Job Seekers' Report</h1>
+      </div>
+    
+    
+      <div class="row">
+      <div class="col-6 pull-left"><Button class="btn btn-danger" (click)="reset()" >Reset</Button></div>
+      <div class="col-6 text-right " ><Button class="btn btn-dark" (click)="printReport()" >Print</Button></div>
+      </div>
+      <br>  
+      
+      <form [formGroup]="loadForm" class="text-center" style="color: #757575;">
+      
+    <div class="row"> 
+      
+    <div class="col col-2">
+      <input type="text" formControlName="startDate" placeholder="Start Date" [bsConfig]="bsConfig"
+      class="form-control"  bsDatepicker>              
+    </div>
+    
+    <div class="col col-2">
+     <input type="text" formControlName="finishDate" placeholder="Finish Date" [bsConfig]="bsConfig"
+        class="form-control"  bsDatepicker>              
+      </div>
+    
+    
+        <div class="col col-2 "  >
+                    <select formControlName="education" class="browser-default custom-select">
+                      <option value="education">Select Education</option>  
+                      <option value="olevel">O' Level</option>
+                        <option value="alevel">A/L Level</option>
+                        <option value="diploma">Diploma</option>
+                        <option value="degree">Degree</option>
+                        <option value="postgraduate">Post Graduate Degree</option>
+                        <option value="master">Master Degree</option>
+                        <option value="doctorate">Doctorate</option>
+                    </select>
+                </div>
+            
+    
+                <div class="col col-2 "  >
+                  <select formControlName="sector" class="browser-default custom-select">
+                    <option value="sector">Select Sector</option>    
+                    <option value="administration">Adminsitration</option>
+                      <option value="acriculture">Acriculture</option>
+                      <option value="engineering">Engineering</option>
+                      <option value="finance">Finance</option>
+                      <option value="accounting">Accounting</option>
+                      <option value="medicine">Medicine</option>
+    
+                    </select>
+              </div>
+        
+              <div class="col col-2 "  >
+                    <select formControlName="state" class="browser-default custom-select">
+                      <option value="state">Select State</option>    
+                      <option value="north">Northern</option>
+                        <option value="northwestern">North Western</option>
+                        <option value="western">Western</option>
+                        <option value="Northcentral">North Central</option>
+                        <option value="central">Central</option>
+                        <option value="sabaragamuwa">Sabaragamuwa</option>
+                        <option value="eastern">Eastern</option>
+                        <option value="uva">Uva</option>
+                        <option value="southern">Southern</option>
+    
+                    </select>
+                </div>
+        
+                  <div class="col col-2 "  >
+                      <select formControlName="type" class="browser-default custom-select">
+                        <option value="type">Select Type</option>  
+                        <option value="casual">Casual</option>
+                          <option value="contract">Contract</option>
+                          <option value="parttime">Part Time</option>
+                          <option value="fulltime">Full Time</option>
+                          <option value="temporary">Temporary</option>
+                          <option value="volunteer">Volunteer</option>
+                      </select>
+                  </div>
+    </div>
+    
+    <br>
+       <button  class="btn btn-success" type="submit" (click)="load()" >Load Report</button>
+    
+       </form>
+    
+    <br>
+    
+      
+    <div id="contentToConvert">
+        <br>
+    <div >
+      
+      <h1 class="text-center" style="text-decoration: underline;font-weight: bolder; font-size: 45px;">Job-Seeker Report</h1>
+    
+      <br>
+      <div class="row">
+        
+        <div class="col-12 text-center">
+       <h3> [&nbsp; From: {{searchKeys?.startDate | date: 'dd/MM/yyyy'}} &nbsp;&nbsp;&nbsp;
+         - &nbsp;&nbsp;&nbsp;
+            Till: {{searchKeys?.finishDate | date: 'dd/MM/yyyy'}} &nbsp;]</h3>
+        </div>
+      </div>
+      
+      <br>
+    </div>  
+      
+    
+    <table mdbTable class="table-striped border-dark" border="0px solid black" id="contentToConvert">
+      <thead class="black white-text" >
+        <tr >
+          <th style="font-size: 20px; font-weight: bolder" class="text-center"
+          *ngFor="let head of headElements" scope="col">{{head}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor= "let jobSeeker of jobseekers ; let i = index">
+          <td class="text-center">{{i+1}}</td>
+          <td class="text-center">{{jobSeeker?.firstName | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.lastName | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.minEduLvl | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.sector | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.state | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.type | titlecase}}</td>
+          <td class="text-center">{{jobSeeker?.isCreated | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+      <div class="alert alert-danger" role="alert" *ngIf="jobseekers.length === 0">
+      
+      <h1 class="text-center "><strong>No result Found</strong></h1>
+    </div>
+    
+    
+    
+    </div>
+    
+    
+    </div>  

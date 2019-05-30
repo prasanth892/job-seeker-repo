@@ -1,0 +1,105 @@
+
+<div class="container " style="margin-top: 80px"> 
+    
+
+ 
+  
+  <br>
+      <div class="text-center" *ngIf="!addJobDivShow">
+        <h1 style="font-weight: bolder">Jobs' Information</h1>
+      </div>
+  
+   
+   
+   <div *ngIf="!addJobDivShow" >
+   
+    <div class="row "   style="margin-top: -20px"  >
+  
+        <form class="form-inline md-form form-sm active-purple active-purple-2 col-9 offset-3">
+            <input class="form-control form-control-sm ml-3 w-75" 
+            type="text" placeholder="Search" style="font-size: 22px" aria-label="Search"
+            (keyup)="searchJobs($event)"
+            mdbInput> <i class="fas fa-search" aria-hidden="true"></i>
+          </form>
+      
+            
+    </div>  
+
+    <ng-template #content let-modal>
+      <div class="modal-header " style="background-color: black; color:white">
+        <h4 class="modal-title text-center">Job-Seeker Bay  Info</h4>
+        <button type="button" class="close"  style="color:red; font-size: 40px; margin-top: -22px; border: 0px solid black" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="font-size: 20px; font-weight: bolder ">
+        <p class="text-dark text-primary text-center"><strong>Mail us for more info</strong> findjob4me@jobseekersbay.com</p>
+        <p class="text-center">Or</p>
+        <p class="text-dark text-primary text-center"><strong>Call us on</strong> 0778544459</p>
+      </div>
+    </ng-template>
+    
+  <hr>
+  <br>
+  <div class="alert alert-danger" role="alert" *ngIf="jobs.length === 0 && !showSpinner">
+    
+    <h1 class="text-center "><strong>No result Found</strong></h1>
+  </div>
+  
+
+  <div class="row" style="cursor: pointer"  >
+    <div class="sk-fading-circle" *ngIf="showSpinner">
+      <div class="sk-circle1 sk-circle"></div>
+      <div class="sk-circle2 sk-circle"></div>
+      <div class="sk-circle3 sk-circle"></div>
+      <div class="sk-circle4 sk-circle"></div>
+      <div class="sk-circle5 sk-circle"></div>
+      <div class="sk-circle6 sk-circle"></div>
+      <div class="sk-circle7 sk-circle"></div>
+      <div class="sk-circle8 sk-circle"></div>
+      <div class="sk-circle9 sk-circle"></div>
+      <div class="sk-circle10 sk-circle"></div>
+      <div class="sk-circle11 sk-circle"></div>
+      <div class="sk-circle12 sk-circle"></div>
+    </div>
+
+
+
+      <ul [ngClass]="{inactive: job.status !== 'active'}" class="card col-md-5 ml-2 mr-5 pt-4" 
+      style="left: 70px;" *ngFor= "let job of jobs" (click)="openVerticallyCentered(content)" >
+        <ol >
+          <div class="d-flex justify-content-between" ><strong>Job Id:{{job.id}}</strong> <strong>{{job.status + ' Vacancy' | titlecase}}</strong></div> 
+            
+          <strong *ngIf="job.status != 'inactive'" >Job Title:</strong> {{ job.jobTitle | titlecase}} 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+          <strong>Sector:</strong> {{job.sector | titlecase}}
+          <br>
+          <strong>State:</strong> {{job.state | titlecase}}
+          <br>
+          <strong>Type:</strong> {{job.type | titlecase}}
+          <br>
+          <strong>Education Level:</strong> {{job.educationLevel | titlecase}}
+          <br>
+          <strong>Professional Qualification:</strong> {{job.professionalQualification  || 'Nil' | titlecase}}
+          <br>
+          <strong>Special Skill:</strong> {{job.specialSkill   || 'Nil' | titlecase}}
+          <br>
+          <strong>Special Experience:</strong> {{job.specialExperience   || 'Nil' | titlecase}}
+          <br>
+          <strong>Posted Date:</strong> {{job.postedDate | date: 'dd/MM/yyyy' }}
+          <br>
+          <strong>Posted By:</strong> {{job.postedBy | titlecase}}
+          <br>
+         </ol>    
+         <br>
+      </ul>
+    </div>
+   </div>
+ 
+  
+  <br><br>
+  
+  
+      
+    </div>
+ 

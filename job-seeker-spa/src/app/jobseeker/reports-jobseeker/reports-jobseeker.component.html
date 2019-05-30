@@ -1,0 +1,207 @@
+
+
+<div class="container " style="margin-top: 100px"> 
+
+  
+  <div class="row col-2 offset-10" id="printReportBtn">
+    <button class="btn btn-dark btn-md text-light"  style="font-size:1em" 
+    (click)="captureScreen()" routerLinkActive="router-link-active" >Print</button>
+  </div>
+
+<div id="contentToConvert" style="padding: 80px 150px;" >
+<h2  style="text-align: center;  font-size: 30px; color: black;" class="text-center font-weight-bolder" >Curriculam Vitae</h2>
+
+<div class="row" >
+  <div class="col offset-9 col-3 right">
+    <img [src]="existingPhoto" style="max-height: 200px" class="float-left">
+   
+  </div>
+</div>
+<br>
+<h4 style="color: black">Personal Details</h4> 
+<hr style="height:3px;border:none;color:#333;background-color:#333;" />
+<br>
+
+<div class="row " style="color: black">
+
+
+  
+  
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Firstname, Lastname &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.firstName | titlecase }},&nbsp; {{existingJobSeeker.lastName | titlecase}}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8"style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.gender | titlecase}}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+        <h6>Date of Birth &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.dob.toString().substring(0,10) }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+        <h6>Religion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.religion | titlecase}}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+        <h6>Marital Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.maritalStatus | titlecase}}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.email }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Contact number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; 0{{existingJobSeeker.contactNumber | titlecase}}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Height in Feet
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; 0{{existingJobSeeker.height }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Address
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.address }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+    <h6>Overview
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.overview | titlecase }}</h6>
+  </div>
+
+
+<br>
+<br>
+<br>
+</div>
+
+
+<h4 style="color: black; ">Education</h4> 
+<hr style="height:3px;border:none;color:#333;background-color:#333;" />
+<br>
+<div class="row " style="color: black">
+<br>
+
+<div class="col col-4" style="padding-bottom: 5px">
+  <h6>Education Level
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+</div>
+<div class="col col-8" style="padding-bottom: 5px">
+  <h6>: {{existingJobSeeker.minEduLvl | titlecase }}</h6>
+</div>
+
+<div class="col col-4" style="padding-bottom: 5px">
+    <h6>GSCE Passes
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.minNumGscePasses | titlecase }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+      <h6>Specific Education Qualification
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+    </div>
+    <div class="col col-8" style="padding-bottom: 5px">
+      <h6>:&nbsp; {{existingJobSeeker.specificEduLvl | titlecase }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+          <h6>Specific Professional Qualification
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+    </div>
+    <div class="col col-8" style="padding-bottom: 5px">
+      <h6>:&nbsp; {{existingJobSeeker.specificProfessionalLvl | titlecase }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+      <h6>Specific Skill
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+    </div>
+    <div class="col col-8" style="padding-bottom: 5px">
+      <h6>:&nbsp; {{existingJobSeeker.specificSkill | titlecase }}</h6>
+  </div>
+
+  <div class="col col-4" style="padding-bottom: 5px">
+          <h6>Specific Experience
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+    </div>
+    <div class="col col-8" style="padding-bottom: 5px">
+      <h6>:&nbsp; {{existingJobSeeker.specificExperience | titlecase }}</h6>
+  </div>
+
+
+</div>
+<br>
+<br>  
+
+<h4 style="color: black; ">Looking For</h4> 
+<hr style="height:3px;border:none;color:#333;background-color:#333;" />
+<br>
+<div class="row " style="color: black">
+<br>
+
+<div class="col col-4" style="padding-bottom: 5px">
+    <h6>Sector
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.sector | titlecase }}</h6>
+</div>
+
+<div class="col col-4" style="padding-bottom: 5px">
+    <h6>State
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.state | titlecase }}</h6>
+</div>
+
+<div class="col col-4" style="padding-bottom: 5px">
+    <h6>Type
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6>
+  </div>
+  <div class="col col-8" style="padding-bottom: 5px">
+    <h6>:&nbsp; {{existingJobSeeker.type | titlecase }}</h6>
+</div>
+
+
+</div>
+
+
+  
+
+</div>  
+
+</div>

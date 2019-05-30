@@ -1,0 +1,61 @@
+<div class="container" *ngIf="!_authService.loggedIn()">
+
+    <ng-template #content let-modal>
+        <div class="modal-header " style="background-color: black; color:white">
+          <h4 class="modal-title text-center">Job-Seeker Bay  Info</h4>
+          <button type="button" class="close"  style="color:red; font-size: 40px; margin-top: -22px; border: 0px solid black" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="font-size: 20px; font-weight: bolder ">
+          <p class="text-dark text-primary text-center"><strong>The job-seekers bay is a software solution for recruiting talented and skillful candidates in various sectors. It’s a multi-user system which allows job-seekers, employees and admins to operate by logging-in themselves with appropriate user credentials. Majorly, it provides two tasks: one would assist job-seekers to upload their CV and find their relevant jobs and the other, would allow employees and admins to maintain and monitor the job-seekers, jobs and other related information.</strong> 
+            </p>
+        </div>
+      </ng-template>
+      
+  <div class="col-xs-12">
+ 
+ <div class="container mt-5" *ngIf="!registerMode">
+   <div style="text-align: center; margin-top: 100px" >
+     <h1>Find your Job with us</h1>
+     <p class="lead">Come on in to find your jobs... All you need to do is sign up!</p>
+     <div class="text-center ">
+       <button class="btn btn-danger btn-md " (click)="registerModeToggle()">Register</button> &nbsp;
+       <button class="btn btn-info btn-md" (click)="openVerticallyCentered(content)" >More Info</button>
+     </div>
+   </div>
+ </div>
+ 
+   <div class="container " *ngIf="registerMode" style="margin-top: 100px" >
+     <div class="row justify-content-center">
+       <div class="col-4">
+ 
+           <app-register [ValueFromHome]="values" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+ 
+       </div>
+     </div>
+   </div>
+ 
+ 
+  </div>
+ </div> 
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+ <div class="container mt-5 " *ngIf="_authService.loggedIn() && userType == 'jobseeker'   ">
+   <p style="text-align: center;  font-size: 25px; " class="jumbotron" >"The job-seekers bay is a software solution for recruiting talented and skillful candidates in various sectors. It’s a multi-user system which allows job-seekers, employees and admins to operate by logging-in themselves with appropriate user credentials. Majorly, it provides two tasks: one would assist job-seekers to upload their CV and find their relevant jobs and the other, would allow employees and admins to maintain and monitor the job-seekers, jobs and other related information."</p>
+ </div>
+
+ <div class="container mt-5" *ngIf="_authService.loggedIn() && userType == 'employee' ">
+  <p style="text-align: center;  font-size: 25px; " class="jumbotron" >"The job-seekers bay is a software solution for recruiting talented and skillful candidates in various sectors. It’s a multi-user system which allows job-seekers, employees and admins to operate by logging-in themselves with appropriate user credentials. Majorly, it provides two tasks: one would assist job-seekers to upload their CV and find their relevant jobs and the other, would allow employees and admins to maintain and monitor the job-seekers, jobs and other related information."</p>
+</div>
+
+<div class="container jumbotron mt-5" *ngIf="_authService.loggedIn() && userType == 'admin' ">
+  <p style="text-align: center;  font-size: 25px; " class="jumbotron" >"The job-seekers bay is a software solution for recruiting talented and skillful candidates in various sectors. It’s a multi-user system which allows job-seekers, employees and admins to operate by logging-in themselves with appropriate user credentials. Majorly, it provides two tasks: one would assist job-seekers to upload their CV and find their relevant jobs and the other, would allow employees and admins to maintain and monitor the job-seekers, jobs and other related information."</p>
+</div>
+
+ 
