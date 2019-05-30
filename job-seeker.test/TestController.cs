@@ -3,10 +3,10 @@ using Xunit;
 
 namespace job_seeker.test
 {
-    public class UnitTest1
+    public class TestController
     {
         [Fact]
-        public void Test1()
+        public void TestAuthController()
         {
 
         }
